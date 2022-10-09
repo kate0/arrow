@@ -13,8 +13,23 @@ pluginManagement {
 }
 
 plugins {
-  id("com.gradle.enterprise") version "3.10.2"
+  id("com.gradle.enterprise") version("3.11.1")
+  id("com.gradle.common-custom-user-data-gradle-plugin") version("1.8.1")
 }
+
+val isCI = !System.getenv("CI").isNullOrEmpty() // adjust to your CI provider
+
+gradleEnterprise {
+  server = "https://ec2-44-210-83-212.compute-1.amazonaws.com" // adjust to your GE server
+  allowUntrustedServer = true // ensure a trusted certificate is configured
+
+  buildScan {
+    capture { isTaskInputFiles = true }
+    isUploadInBackground = !isCI
+    publishAlways()
+  }
+}
+
 
 dependencyResolutionManagement {
   repositories {
