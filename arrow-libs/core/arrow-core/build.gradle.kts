@@ -67,9 +67,3 @@ tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimu
   deviceId = "iPhone 14"
 }
 
-tasks.named<KotlinCompile>("watchosSimulatorArm64Test").configure {
-  enabled = false
-}
-tasks.named<KotlinCompile>("tvosSimulatorArm64Test").configure {
-  enabled = false
-}
