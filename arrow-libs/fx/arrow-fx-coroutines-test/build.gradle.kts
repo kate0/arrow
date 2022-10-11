@@ -39,3 +39,8 @@ kotlin {
     }
   }
 }
+
+
+tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest> {
+  deviceId = "iPhone 14"
+}

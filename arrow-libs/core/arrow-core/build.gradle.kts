@@ -62,3 +62,7 @@ kotlin {
 tasks.named<KotlinCompile>("compileTestKotlinJvm") {
   kotlinOptions.freeCompilerArgs += "-Xcontext-receivers"
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest> {
+  deviceId = "iPhone 14"
+}

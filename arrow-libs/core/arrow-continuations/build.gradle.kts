@@ -19,6 +19,10 @@ if (enableCompatibilityMetadataVariant) {
   }
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest> {
+  deviceId = "iPhone 14"
+}
+
 kotlin {
   sourceSets {
     commonMain {

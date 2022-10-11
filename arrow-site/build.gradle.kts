@@ -16,7 +16,7 @@ tasks {
     register<Exec>("generateSite") {
         commandLine("sh", "generate-site.sh")
     }
-    
+
     register("buildSite") {
         group = "documentation"
         description = "Generates and validates the documentation, and generates the website"
@@ -29,4 +29,8 @@ tasks {
     named<Delete>("clean") {
         delete("$projectDir/docs/apidocs")
     }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest> {
+  deviceId = "iPhone 14"
 }
