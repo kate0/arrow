@@ -35,9 +35,10 @@ tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimu
 
 apply(from = property("ANIMALSNIFFER_MPP"))
 
-tasks.named("watchosSimulatorArm64Test").configure {
+tasks.named<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>("watchosSimulatorArm64Test").configure {
   enabled = false
 }
-tasks.named("tvosSimulatorArm64Test").configure {
+tasks.named<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>("tvosSimulatorArm64Test").configure {
   enabled = false
 }
+
