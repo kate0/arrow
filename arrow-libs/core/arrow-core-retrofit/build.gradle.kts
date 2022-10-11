@@ -38,3 +38,10 @@ dependencies {
 tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest> {
   deviceId = "iPhone 14"
 }
+
+tasks.named("watchosSimulatorArm64Test").configure {
+  enabled = false
+}
+tasks.named("tvosSimulatorArm64Test").configure {
+  enabled = false
+}
